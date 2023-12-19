@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div[id]{
+            border: 1px solid red;
+        }
+        #outer_box{
+            height: 10rem;
+            width: 10rem;
+            background-color: lightblue;
+        }
+        #inner_box{
+            height: 50%;
+            width: 50%;
+            background-color: lightgreen;
+            margin-top: 10px;
+        }
+        #button{
+            margin-top: 3px;
+            background-color: lightsalmon;
+            width: 50%;
+            margin-left: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event bubbling</h1>
+    <div id="outer_box">
+        <div id="inner_box">
+            <div id="button">click me</div>
+        </div>
+    </div>
+    <script>
+        let button = document.querySelector("#button");
+        let innerBox = document.querySelector("#inner_box");
+        let outerBox = document.querySelector("#outer_box");
+
+        button.addEventListener("click",(e)=>{
+            console.log("Button is clicked");
+            console.log("CUrrent target : ",e.currentTarget);
+
+            //TO stop the propagation we can use stopPropagation()
+            e.stopPropagation()
+        })
+        innerBox.addEventListener("click",(e)=>{
+            console.log("inner box is clicked");
+            console.log("CUrrent target : ",e.currentTarget);
+            e.stopPropagation()
+        })
+        outerBox.addEventListener("click",(e)=>{
+            console.log("outer box is clicked");
+            console.log("CUrrent target : ",e.currentTarget);
+            e.stopPropagation()
+        })
+    </script>
+</body>
+</html>

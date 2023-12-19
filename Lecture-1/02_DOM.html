@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>I am h1</h1>
+    <h1>I am also h1</h1>
+    <h1>I am h1 too</h1>
+    <h2>I am h2</h2>
+    <h3>I am h3</h3>
+    <h4>I am h4</h4>
+
+    <input type="text">
+    <input type="password" id="special">
+    <input type="text">
+    <button>click here</button>
+
+    <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto, ullam! Aperiam non voluptate magnam incidunt, repudiandae placeat? Delectus at deserunt magnam repellat tempore, earum deleniti ad aut repellendus quibusdam error?</p>
+
+    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio voluptates incidunt maiores excepturi minima quod nam cupiditate, temporibus, quibusdam ipsa officiis! Vel hic quisquam suscipit, dolorem pariatur laborum dolore error!</p>
+
+    <p class="para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas laudantium facere non similique assumenda eos quaerat, nisi magnam corporis consequuntur accusantium facilis quo! Suscipit officiis quo ipsam asperiores at expedita.</p>
+
+
+    <script>
+         
+        //return first element using css selector.
+        const h1 = document.querySelector("h1");
+        console.log(h1);
+        const inputPass = document.querySelector("input[type='password']")
+        console.log(inputPass);
+
+        //returns all the element using css selector.
+        const h1arr = document.querySelectorAll("h1");
+        console.log(h1arr);//This is not an array, this is just a nodelist
+        h1arr.forEach(element =>{
+            console.log(element.textContent);
+        })
+        //WHen we are doing read operation for an element-> nodelist, html collection both are like array but not array.
+        const paras = document.getElementsByClassName("para");
+        console.log(paras);
+
+        //Convert nodelist/html collection into array
+        const newH1arr = Array.from(h1arr);
+        console.log(newH1arr);
+    </script>
+</body>
+</html>

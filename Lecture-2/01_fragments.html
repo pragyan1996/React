@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Item List</h1>
+    <ul id="listContainer"></ul>
+    <script>
+        //add 1000 elements to the list.
+        let ul = document.querySelector("#listContainer");
+        /* for(let i = 0 ; i < 1000 ; i++){
+            //creation
+            let newLi = document.createElement("li");
+
+            //update
+            newLi.textContent = `I am the ${i+1}th item`;
+
+            //append to the list
+            ul.appendChild(newLi);
+        } */
+        //Line no. 23 will take more time to modify the dom. to overcome this we can use the concept called fragments.
+        //fragments: It wrap up a collection of html tags.
+        let fragment = document.createDocumentFragment();
+        for(let i = 0 ; i < 1000 ; i++){
+            //creation
+            let newList = document.createElement("li");
+            
+            //update
+            newList.textContent = `I am ${i+1}th item`;
+
+            //append these to those fragment list.
+            fragment.appendChild(newList);
+        }
+        console.log("fragment "+fragment);
+        ul.appendChild(fragment);
+
+    </script>
+
+</body>
+</html>

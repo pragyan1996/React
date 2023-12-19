@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>I am h1</h1>
+    <h1>I am also h1</h1>
+    <h1>I am h1 too</h1>
+    <h2>I am h2</h2>
+    <h3>I am h3</h3>
+    <h4>I am h4</h4>
+
+    <div id="unique">
+        <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto, ullam! Aperiam non voluptate magnam incidunt, repudiandae placeat? Delectus at deserunt magnam repellat tempore, earum deleniti ad aut repellendus quibusdam error?</p>
+
+        <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio voluptates incidunt maiores excepturi minima quod nam cupiditate, temporibus, quibusdam ipsa officiis! Vel hic quisquam suscipit, dolorem pariatur laborum dolore error!</p>
+    
+        <p class="para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas laudantium facere non similique assumenda eos quaerat, nisi magnam corporis consequuntur accusantium facilis quo! Suscipit officiis quo ipsam asperiores at expedita.</p>
+    </div>
+
+    <input type="text">
+    <input type="password" id="special">
+    <input type="text">
+    <button>click here</button>
+
+    <script>
+
+        let div = document.querySelector("div");
+        // console.log(div);
+        // console.log("Inner html : ",div.innerHTML);
+        // console.log("inner text : ",div.innerText);
+        // console.log("text content : ",div.textContent);
+        div.style.backgroundColor = "lightyellow";
+        div.style.color = "red";
+        
+
+        //Attributes:
+        const idName = div.getAttribute("id");
+        console.log(idName);
+        const input = document.getElementById("special");
+        console.log(input);
+        const type = input.getAttribute("type");
+        console.log(type );
+
+
+        input.setAttribute("type","email");
+        const type2 = input.getAttribute("type");
+        console.log(type2);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0
+
+}
+
+.timer_label{
+    display: flex;
+}
+.pause{
+    display: none;
+}
+.continue{
+    display: none;
+}
+button{
+    background-color: aliceblue;
+    color: blue;
+    border-radius: 10px;
+    cursor: pointer;
+}

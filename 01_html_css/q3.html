@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* In both the cases p is descendent of p so it is colored as blue
+    .c1 p{
+        color: blue;
+    } */
+    /* For direct child we should use > */
+    div>p{
+        color: blue;
+    }
+
+    input[value="Select me"]{
+        color: blue;
+        cursor: pointer;
+    }
+</style>
+<body>
+    
+     <!-- Make the first paragraph text blue -->
+     <div class="c1">
+        <p>color me</p>
+    </div>
+    <div class="c1">
+        <span>
+            <p>not me</p>
+        </span>
+    </div>
+
+    <form action="">
+        <input type="button" value="click me">
+        <input type="button" value="Select me">
+    </form>
+</body>
+</html>

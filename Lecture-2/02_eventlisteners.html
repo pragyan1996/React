@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        background-color: lightgreen;
+        border: 1px solid green;
+        height: 10rem;
+        width: 10rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <script>
+      let box = document.querySelector(".box");
+      /*
+            What are the ways to add event listeners:
+            -inlineEvenets: for a given events you can use it only once(the last one) 
+            -addEventListeners: If you want to use multiple on click 
+            actions then better to use eventListener.
+        */
+
+      //**************1.Inline Eventlisteners***************
+      // box.onclick = function(){
+      //     alert("I am fake")
+      // }
+      // box.onclick = function(){
+      //     console.log("I was clicked");
+      //     console.log("I am fake");
+      // }
+
+      //**************2.eventListener***********************
+      // box.addEventListener("click",()=>{
+      //     console.log("Inline eventListener");
+      // })
+
+      box.addEventListener("click", cb, {once: true});
+      //{once: true}: limit click listener once
+      // let once = false;
+      function cb() {
+        console.log("here");
+        let h1 = document.createElement("h1");
+        h1.textContent = "Hello";
+        document.body.appendChild(h1);
+        once = true;
+        // box.removeEventListener("click", cb);
+      }
+    </script>
+  </body>
+</html>
