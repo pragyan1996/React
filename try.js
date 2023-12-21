@@ -1,56 +1,28 @@
-var FoodRatings = function(foods, cuisines, ratings) {
-    let foodRating = [];
-    for(let i = 0 ; i < foods.length ; i++){
-        let data = {};
-        data.food = foods[i];
-        data.cuisin = cuisines[i];
-        data.rating = ratings[i];
-        foodRating.push(data);
-    }
-    return foodRating;
-};
-
-/** 
- * @param {string} food 
- * @param {number} newRating
- * @return {void}
- */
-FoodRatings.prototype.changeRating = function(food, newRating) {
-    let foodRating = this;
-    console.log(foodRating);
-    for(let data in foodRating){
-        if(data.food == food){
-            data.rating = newRating;
+function lcs(s1, s2, i, j, dp){
+    if(i < 0 || j < 0) return 0;
+    if(dp[i][j] == -1){
+        if(s1.charAt(i) == s2.charAt(j)){
+            dp[i][j] = 1 + lcs(s1, s2, i-1, j-1, dp);
+        }
+        else{
+            dp[i][j] = Math.max(lcs(s1,s2, i-1,j,dp), lcs(s1,s2,i,j-1,dp));
         }
     }
-};
+    return dp[i][j];
+}
 
-/** 
- * @param {string} cuisine
- * @return {string}
- */
-FoodRatings.prototype.highestRated = function(cuisine) {
-    let foodRating = this;
-    let arr = [];
-    for(let data in foodRating){
-        if(data.cuisin == cuisine){
-            arr.push([data.food, data.rating]);
+var longestCommonSubsequence = function (text1, text2) {
+    let n = text1.length, m = text2.length;
+    let dp = []
+    for (let i = 0 ; i < n ; i++) {
+        let arr = [];
+        for (let j = 0 ; j < m ; j++) {
+            arr.push(-1);
         }
+        dp.push(arr);
     }
-
-    data.sort((a,b)=>{
-        if(a[1] == a[b]){
-            return a[0].localeCompare(b[0]);
-        }
-        return a[1] - b[1];
-    })
-
-    return data[0][0];
+    console.log(dp);
+    return lcs(text1, text2, n - 1, m - 1, dp);
 };
-let food = new FoodRatings(["kimchi", "miso", "sushi", "moussaka", "ramen", "bulgogi"],
-["korean", "japanese", "japanese", "greek", "japanese", "korean"],
-[9, 12, 8, 15, 14, 7]
-);
 
-console.log(food);
-food.highestRated();
+console.log(longestCommonSubsequence("abcde","ace"));
