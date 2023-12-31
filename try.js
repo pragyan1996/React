@@ -1,14 +1,17 @@
-let str = "10010100"
+var maxLengthBetweenEqualCharacters = function(s) {
+    let map = {};
+    let dist = -1;
+    let arr = s.split('');
+    console.log(arr);
+    arr.forEach((ch,i,arr) =>{
+        if(map[ch] >= 0){
+            dist = Math.max(dist, i-map[ch]-1);
+            // map[ch] = i;
+        }
+        else {map[ch] = i;}
+    })
+    console.log(map);
+    return dist;
+};
 
-let n = str.length;
-let str1 = '', str2 = '';
-let cnt1 = 0 , cnt2 = 0;
-for(let i = 0 ; i < n ; i ++){
-    str1 = i%2 == 0 ? '0' : 1;
-    str2 = i%2 == 1 ? '0' : 1;
-    if(str1 != str.charAt(i)) cnt1++;
-    if(str2 != str.charAt(i)) cnt2++;
-}
-
-
-console.log(str, Math.min(cnt1, cnt2));
+console.log(maxLengthBetweenEqualCharacters("mgntdygtxrvxjnwksqhxuxtrv"));
