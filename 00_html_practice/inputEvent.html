@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter text">
+    <p></p>
+</body>
+<script>
+    let input = document.querySelector("input");
+    let p = document.querySelector("p");
+    input.addEventListener("keypress",(e)=>{
+        console.log(e.key);
+        if(e.key == 'Enter'){
+            p.innerHTML = input.value;
+        }
+    })
+</script>
+</html>
