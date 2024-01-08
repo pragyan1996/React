@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div ~ p{
+        color: red;
+    }
+
+    div :focus{
+        color: red;
+    }
+
+    p::before{
+        content: "Hello";
+        background-color: aliceblue;
+    }
+    p::after{
+        content: "yoo";
+    }
+    p::first-line{
+
+    }
+    p::first-letter{
+        color: red;
+    }
+    .text{
+        color: green !important;
+    }
+    #id{
+        color: pink;
+    }
+</style>
+<body>
+    <div>
+        <p>Hello</p>
+        <div>
+            <p>How are you</p>
+        </div>
+        <div>
+            <p>What year?</p>
+        </div>
+        <p>I am in red</p>
+
+        <p id="text" style="color: red;">Helloooooo</p>
+    </div>
+</body>
+</html>

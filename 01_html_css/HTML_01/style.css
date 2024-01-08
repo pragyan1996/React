@@ -1,0 +1,23 @@
+/* 
+Types of CSS Selectors:
+    1) Class Selector: used to select group of element. (.) is used for class
+    2) Id selector: Used to select an element and identify it uniquely among all the other elements. (#) us used for id.
+    3) Universal selector: (*) is used. Applies html to all elements on the web page
+    4) element selection: used to select an element. h2{}- directly names can be used
+    5) Attribute selection: selects elements based on attribute. [attribute] or [data-text = "value"] both can be used.
+    6) Descendent selection: selects all the descendent of a specified element. (div p{}) space is used between the two tags first one is the parent and second one is the descendent of first.
+    7) Child selector: (element > element) selects all elements that are the children of a specified element.
+    8) Adjacent sibbling selector: (element + element) or (selection + selection) To select an element that is immediately after another specified element.
+    9) General sibbling selector: (element ~ element) or (selection ~ selection) selects all the elements that are next sibbling of a specified element.
+    10) Pasudo class selector: A pseudo class is used to define a special state of an elemen.
+            *Such as element when mouseover
+            *Style visited and unvisited links
+            *style an input element.
+    
+*/
+h2{
+    color: blue ;
+}
+.af-text{
+    color: green;
+}
