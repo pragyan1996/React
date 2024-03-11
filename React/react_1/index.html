@@ -1,0 +1,126 @@
+<!--
+    What is react?
+        ->React is a front end library developed by fb in 2011.
+        ->It is opensource js library and supported by one of the largest communities.
+        ->Used to develop complex and interactive web and mobile UIs.
+        ->Follows the component based approach which helps us to build reusable UI components
+    
+    Is react a front end library or framework?
+        It is front end library.
+    
+    Difference between library and framework?
+        ->Library: Pre written code for specific task that you can use as required, allows you to control your code structure🥲.
+        ->Framework: A ready-made structure and a toolkit that helps to build the applications
+                     by following its rules and patterns that make the development smoother.
+    
+    Who invented ReactJS library?
+    -> React library was created/invented by Jordan Walke, a S/W wroking for FB.
+    
+    What are the benefits of using ReactJS library?
+    
+    1.) Uses Virtual DOM rather than real DOM, because the manipulations are expensive operations directly over real DOM.
+    
+    2.) Follows uni directional data flow or data binding.
+    
+    3.) Follows component based approach.
+    
+    4.) Uses the reusable UI components to develop the UIs.
+    
+    5.) offer fast rendering.
+    
+    6.) Comes with useful deevloper toolset.
+    
+    7.) Supports SSR.
+    
+    8.) one of the largest community support established.
+    
+    9.) React acts as a standard for the mobile app development.
+    
+    10.) Easy to learn.
+    
+    Setting up the development environment using CDN link.
+    -> we be using React 18 version
+    
+    What is component?
+    -> It's an independent and reusable piece of code.
+    -> They are just same functions in JS, but they work in isolation and retun the JSX elements.
+    
+    What is JSX?
+    -> JSX stands for Javascript XML or syntactical extention of JavaScript.
+    -> JSX = HTML + JS
+    
+    //const x = 10;
+    const element = <h1> Hello, Ashwani. </h2>;
+    
+        -> JSX is not understood by browser, you need convert it into JS objects.
+        Babel is used to transpile that takes JSX and get converted into JS objects.
+    
+        React DOM: it's JS library that is used alonf React JS
+        library to render the componnets or JSX elements into the real DOM of a web page.
+    
+        What is props?
+        -> props stands for properties.
+        -> A way to pass data from one component to another component
+        or share the data from one comp to another comp.
+        -> Props are immutable so we can't modify the props inside the component.
+    
+        What is component composition?
+        -> Componnet composition means putting small and resusable components together to build complex UI.
+        // return <div>
+            //
+            <Hello username="Tony" age={28} />
+            //
+            <Hello username="Akash" />
+            //
+            <Hello username="Uzma" age={26} />
+            //
+            <Hello username="Sahil" age={25} />
+            //
+            <Hello username="Ashwin" age={30} />
+            //
+        </div>;
+        What is rendering List in React?
+        -> A list of data to be displayed in an ordered format and mainly
+        used for the menus or the list of ites over the web apps.
+        -> we use map() -> JS HOF
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First React app</title>
+    <!-- React is used for UI manipulation -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+
+    <!-- react dom -> To get the actual changes in the DOM with the help of react DOM library  -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- to convert jsx to js  -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        //JSX-> HTML + JS
+        // function(){
+
+        // }
+        const Hello = () => {
+            return <h1> hello </h1>;
+        }
+
+        const Main = () => {
+            return <div>
+                <Hello />
+            </div>
+        }
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.rendar(<Main />);
+    </script>
+</body>
+
+</html>
