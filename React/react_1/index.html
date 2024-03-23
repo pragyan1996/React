@@ -103,23 +103,34 @@
 </head>
 
 <body>
-    <div id="root"></div>
-    <script>
+    <div id="root">
+
+    </div>
+    <script type="text/babel">
         //JSX-> HTML + JS
         // function(){
 
         // }
-        const Hello = () => {
-            return <h1> hello </h1>;
+        const Hello = (props) => {
+            console.log(props);
+            const name = props.username;
+            const age = props.age
+            return <h1> hello {name.toUpperCase()} {age}, how are you... </h1>;
         }
 
         const Main = () => {
             return <div>
-                <Hello />
+                <Hello username="Pragyan" age="20"/>
+                <Hello username="Nishant" />
+                <Hello username="Pragati" />
+                <Hello username="Priya" />
+
             </div>
         }
         const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.rendar(<Main />);
+        root.render(< Main />);
+
+
     </script>
 </body>
 
